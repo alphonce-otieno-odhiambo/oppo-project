@@ -1,0 +1,24 @@
+<h1></h1>
+<div>
+    <p></p>
+    <form (ngSubmit)="submitMessage()">
+        <p>please add a comment here</p>
+        <input class="form-control" type="text" name="name" placeholder="your name" [(ngModel)]="contactName" autocomplete="off">
+        <input class="form-control" type="text" name="email" placeholder="your email" [(ngModel)]="contactEmail" autocomplete="off">
+        <textarea name="message" placeholder="your message" rows="18" cols="30" type="text" [(ngModel)]="contactMessage" autocomplete="off"></textarea>
+        <button type="submit" class="btn btn-info btn-lg">SUBMIT</button>
+    </form>
+    <div>
+        <p class="margine-none"> Name: <span>{{contactName}} </span></p>
+        <p class="margine-none">Email: <span>{{contactEmail}} </span></p>
+        <p class="margine-none">{{contactMessage}} </p>
+    </div>
+    <div>
+        <div ngFor="let message of messages">
+            <h1 class="margine-none"> {{message.contactName}}</h1>
+            <p class="margine-none">{{message.contactEmail}} </p>
+            <small class="margine-none">{{message.contactMessage}} </small>
+            <hr>
+        </div>
+    </div>
+</div>
